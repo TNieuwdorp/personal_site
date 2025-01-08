@@ -4,3 +4,6 @@
 
 layout: home
 ---
+
+Hello, world!
+On this site I share my things of interest.
