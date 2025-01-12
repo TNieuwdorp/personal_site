@@ -1,5 +1,67 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+# Ignore the generated site files
+public/
+
+# Ignore the .cache directory used by Hugo for caching
+.cache/
+
+# Ignore the resources directory used by Hugo for image processing
+resources/
+
+# Ignore Hugo's lock file
+hugo.lock
+
+# Ignore log files
+logs
+*.log
+
+# Ignore temporary files and directories
+.tmp/
+tmp/
+
+# Ignore node_modules if you are using JavaScript/TypeScript in your project
+node_modules/
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Ignore CI-related files
+.github/
+.circleci/
+.gitlab-ci.yml
+
+# Ignore Hugo's static directory (this is optional, based on your workflow)
+# static/
+
+# Ignore other miscellaneous files
+.hugo_build.lock
+NETSCAPE
+
+# Ignore global configuration files
+/config/.toml
+/config/.yaml
+/config/.json
+
+# Additional ignored folders/files for development setup (adjust as needed)
+dist/
+build/
+coverage/
+.vscode/
+*.lockfile
+*.DS_Store
+
+# Ignore any local environment files
+.env.*.local

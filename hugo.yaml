@@ -1,0 +1,22 @@
+baseURL: https://thijsnieuwdorp.com/
+languageCode: en-us
+title: Thijs Nieuwdorp
+theme: "PaperMod"
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 30    
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 90
