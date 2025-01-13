@@ -2,6 +2,8 @@
 date: '2024-12-18T12:14:29+01:00'
 draft: true
 title: 'Moving to uv'
+description: "A blog post detailing the features of uv, an extremely fast Python package installer and resolver, an explanation and examples of it's functionality, and a migration guide for switching to it."
+keywords: ["Python", "software engineering", "development", "uv", "Rust"]
 categories: [tool]
 ---
 

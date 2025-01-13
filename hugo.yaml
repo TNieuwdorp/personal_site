@@ -2,6 +2,26 @@ baseURL: https://thijsnieuwdorp.com/
 languageCode: en-us
 title: Thijs Nieuwdorp
 theme: "PaperMod"
+
+params:
+  description: "Expert insights on Python development, data engineering with Polars, package management with uv, and productivity tips. Join Thijs Nieuwdorp's technical blog for practical guides and best practices."
+  author: "Thijs Nieuwdorp"
+  
+  # SEO keywords
+  keywords: ["Python Development", "Polars", "Data Engineering", "uv Package Manager", "Productivity Tips", "Technical Guides"]
+  
+  # Social and metadata
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/TNieuwdorp/"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/thijsnieuwdorp"
+    
+  # Shows custom metadata like reading time
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowBreadCrumbs: true
+
 menu:
   main:
     - identifier: home
