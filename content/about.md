@@ -1,12 +1,6 @@
 ---
 title: "About Me"
 date: 2024-01-12
-draft: false
-description: "About Thijs Nieuwdorp"
-showReadingTime: false
-showBreadCrumbs: true
-showPostNavLinks: true
-showWordCount: false
 ---
 
 ## Hi, I'm Thijs
