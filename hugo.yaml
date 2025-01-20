@@ -6,6 +6,9 @@ theme: "PaperMod"
 params:
   description: "Expert insights on Python development, data engineering with Polars, package management with uv, and productivity tips. Join Thijs Nieuwdorp's technical blog for practical guides and best practices."
   author: "Thijs Nieuwdorp"
+  homeInfoParams:
+    Title: Hello, world!
+    Content: "Welcome to my personal site. It's freshly created and I'm working on putting some content on here. To stay up to date, link with me on my social media:"
   
   # SEO keywords
   keywords: ["Python Development", "Polars", "Data Engineering", "uv Package Manager", "Productivity Tips", "Technical Guides"]
