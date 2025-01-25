@@ -1,100 +1,77 @@
 ---
-date: '2024-12-18T12:14:29+01:00'
-draft: true
-title: 'Why I’m Ditching poetry for uv'
+date: "2025-01-17T18:58:03+01:00"
+title: "Why I'm Ditching poetry for uv"
 description: "How I cut my Python working environment's headaches in half with Astral's uv - a Rust-powered Swiss Army knife for Python workflows."
 keywords: ["Python", "uv", "Data Science", "Machine Learning", "Rust"]
 categories: [tool]
 ---
 
-## The Python Tool That Made Me Say "Where Have You Been All My Life?"
+## Where Have You Been All My Life?
 
-Let me paint you a familiar picture: You’re excited to start a new ML project. You `git clone` that fancy repo, you have to figure out how to install the python environment on your system, which can consist of picking the right python version, picking the right dependency manager to install everything and... *watch the spinner of doom*. 45 minutes later, you’ve solved three dependency conflicts and aged six months. Enter **uv** - Astral’s answer to Python tooling fatigue.
+Let me paint you a familiar picture: You're excited to start a new Python project.
+You `git clone` that fancy repo and you have to figure out how to install the python environment on your system. 
+It can consist of installing the right python version, picking the right dependency manager to install everything and waiting 45 minutes for everything to install, only to run into yanked versions, or incompatibilities for your specific config.
+Enter **uv** - Astral's answer to Python tooling fatigue.
 
 ### What Exactly is This Magic?
-**uv** is like if `pip`, `virtualenv`, and `pyenv` had a baby raised by Rust (the programming language, not the game). Created by the same folks behind the wildly popular Ruff linter, it’s essentially:
-- 🚀 A dependency resolver that runs at *light speed* (think 10-100x faster)
+**uv** is like if `pip`, `virtualenv`, and `pyenv` had a baby raised by Rust. 
+Created by the same folks behind the wildly popular `ruff` linter, it's essentially:
 - 🧩 A unified toolkit replacing half your Python workflow
+- 🚀 A dependency resolver that runs at *light speed* (think 10-100x faster)
 - 🔄 Backward-compatible with your existing `requirements.txt` and `pyproject.toml`
 
-I’ve been using it for a couple of months now, and honestly? Going back feels like trading in my laptop for a typewriter.
+I've been using it for a couple of months now, and honestly? 
+Going back would feel like punishment.
 
 ---
 
-## Why You’ll Want This in Your Data Science Toolkit
+## Why You'll Want This in Your Data Science Toolkit
 
 ### 1. “Wait, It Installed Already?” Speed
-Let’s get real - we’ve all used install time to make coffee. With uv, that coffee break turns into a sip. Here’s my totally scientific benchmark for the [repo with notebooks](https://github.com/jeroenjanssens/python-polars-the-definitive-guide) for the [Python Polars book](polarsguide.com):
+Let's get real - we've all used install time to make coffee. With uv, that coffee break turns into a sip. I've benchmarked the install times for `pip` and `uv` for the [repo with notebooks](https://github.com/jeroenjanssens/python-polars-the-definitive-guide) for our [Python Polars book](polarsguide.com), and these are the results:
 
-Let's start with benchmarking a cold install (download everything, no cache):
-```bash
-Benchmark 1: pip install -I --no-cache-dir -r requirements.txt
-  Time (mean ± σ):     154.276 s ±  2.181 s    [User: 77.785 s, System: 31.420 s]
-  Range (min … max):   152.734 s … 155.818 s    2 runs
+![Benchmark showing the difference between pip for a cold and a warm install.](/images/benchmark.png "Benchmark")
 
-# New way (uv)
-Benchmark 1: uv sync --reinstall
-  Time (mean ± σ):      5.908 s ±  0.535 s    [User: 0.490 s, System: 5.334 s]
-  Range (min … max):    5.479 s …  6.871 s    10 runs🚀
-```
+For a cold install (where the package managers have to download everything) pip takes 154 seconds, while uv takes 6 seconds.
+For a warm install (where all packages are in cache) pip takes 102 seconds, while uv takes 29 **mili**seconds.
 
-pip takes 154 seconds, while uv takes 6 seconds.
+That's what a smart structure combined with Rust's parallelism and smarter dependency resolution can get you.
 
-And a warm install (using only cache):
-```bash
-Benchmark 1: pip install -I -r requirements.txt
-  Time (mean ± σ):     102.244 s ±  0.622 s    [User: 67.571 s, System: 27.707 s]
-  Range (min … max):   101.804 s … 102.684 s    2 runs
-
-  Benchmark 1: uv sync
-  Time (mean ± σ):      29.0 ms ±   1.2 ms    [User: 19.0 ms, System: 7.6 ms]
-  Range (min … max):    25.8 ms …  32.7 ms    83 runs
-```
-
-pip takes 102 seconds, while uv takes 29 **mili**seconds.
-
-That's what a smart structure combined with Rust’s parallelism and smarter dependency resolution can get you.
-
-### 2. No More “But It Worked on My Machine!”
-We’ve all been there - your model trains perfectly locally, then explodes in production because `polars` sneaked in a minor version update. uv’s lockfiles are your new best friend:
-
-```bash
-uv pip compile requirements.in -o requirements.txt
-```
-
-This creates dependency versions so locked down, they make Fort Knox look casual. My team’s deployment errors dropped 70% after we adopted this.
+### 2. Environment Ready To Go
+Much like `poetry`, `uv` works with lockfiles.
+In these files the specific versions are saved so that you can test that everything works in that specific configuration.
+But on top of that `uv` also takes care of you having the right python version to run everything with. 
+This makes one `uv sync` the only command you run to get up and running.
 
 ### 3. Python Version Juggling Made Simple
-Remember that time TensorFlow broke because someone used Python 3.12 too early? uv’s Python management is smoother than a barista’s latte art:
+Remember that time `numpy` broke because someone used Python 3.12 too early? `uv`'s Python management is smoother than a barista's latte art:
 
 ```bash
 uv python install 3.13  # Gets the exact version you need
 uv venv --python 3.13   # Creates environment with it
 ```
 
-No more `pyenv`/`conda` conflicts. It’s like having a Python version time machine.
+No more `pyenv`/`conda` conflicts or trouble getting the right version on your system.
 
 ---
 
 ## Getting Started: A Human-Friendly Guide
 
 I'd recommend installing it on your system, as it's a tool you'll use. Not a dependency for the project your working on.
-If you’re on macOS/Linux:
+If you're on macOS/Linux:
 
 ```bash
 # One-line install - the good kind of magic
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Or if you’re a Homebrew fanatic:
+Or if you're a Homebrew fanatic:
 
 ```bash
 brew install uv  # Because why complicate things?
 ```
 
-Other ways of installing it are available [on the website](https://docs.astral.sh/uv/getting-started/installation/).
-
-Pro tip: If it asks you to restart your shell, *actually do it*.
+Other (subpar) ways of installing it are available [on the website](https://docs.astral.sh/uv/getting-started/installation/).
 
 ---
 
@@ -109,31 +86,26 @@ uv init my_project && cd my_project
 uv add polars "torch>=2.0"
 ```
 
-3. **Run scripts** like it’s 3024:
+3a. **Set-up virtual environment**:
+```bash
+uv sync
+source .venv/bin/activate
+```
+
+3b. **Run scripts** like it's 3025:
 ```python
-# train.py
+# plot.py
 # /// [uv]
-# dependencies = ["scikit-learn", "xgboost"]  # PEP723 annotations FTW
+# dependencies = ["polars", "plotnine"]  # PEP723 annotations FTW
 # ///
 
 # Your actual code below...
 ```
 
 ```bash
-uv run train.py  # Auto-installs deps then runs - chef's kiss
+uv run plot.py
 ```
-
----
-
-## The Killer Feature You Didn’t Know You Needed
-Imagine this: You’re debugging a model at 2 AM. Instead of wrestling with `pip` and `virtualenv`, you just:
-
-```bash
-uv pip install --reinstall-broken  # Fixes dependency hell
-uv run serve_model.py  # Handles everything else
-```
-
-It’s like having a DevOps engineer in your terminal. I’ve literally gotten back hours of my week.
+Auto-installs deps into an ephemeral environment and then runs it - chef's kiss
 
 ---
 
@@ -143,35 +115,101 @@ Probably! uv plays nice with:
 - ✅ Docker (their docs have great examples)
 - ✅ Jupyter notebooks (use `uv run notebook.ipynb`)
 - ✅ Even legacy `requirements.txt` files
+- ⛔️ A [tool.poetry] set-up in pyproject.toml (But it's relatively easy to migrate)
 
-The only thing missing? A "I ❤️ uv" sticker for your laptop. (Astral, if you’re reading this...)
+The only thing missing? A "I ❤️ uv" sticker for your laptop. (Astral, if you're reading this...)
 
 ---
 
-## Should You Switch? A Totally Biased Take
+## Should You Switch?
 
 **Yes if**:
 - You value your time more than package managers
-- Your team has more dependency issues than a soap opera
 - You want one tool instead of five
 
 **Maybe wait if**:
-- You’re mid-critical-project (learning curve exists)
-- You need Windows support yesterday (it’s coming!)
+- You're mid-critical-project (learning curve exists)
+- Your project config is a nightmare to migrate
+- Your life depends on [dependabot support](https://github.com/dependabot/dependabot-core/issues/10478) (Coming this quarter!)
 
 ---
 
-## Final Thought: Why This Matters for ML
+`uv` isn't just a tool upgrade - it's a productivity boost. 
+My main takeaway from this tool is that **performance is, in fact, a feature**!
+Ultimately that leaves me more time to browse memes, which is, of course, what life is actually about.
 
-In machine learning, iteration speed is everything. The less time you spend on environments, the more you can:
-- Experiment with models
-- Tune hyperparameters
-- Actually *do data science*
+![Drake meme showing the commands uv replaces.](/images/uv-meme.jpg "uv meme")
 
-uv isn’t just a tool upgrade - it’s a productivity time machine. Now if you’ll excuse me, I need to go not-wait-for-pip-installs.
 
-*[Discuss on Hacker News](#) | [Complain about my hot takes on X](#)*
+{{% comment %}}
+import polars as pl
+from plotnine import *
+from plotnine import position_dodge
 
----
+# Create the dataframe with explicit orientation
+data = [
+    ("pip", 154.276, "Cold Install"),
+    ("uv", 5.908, "Cold Install"),
+    ("pip", 102.244, "Warm Install"),
+    ("uv", 0.029, "Warm Install")
+]
+df = pl.DataFrame(
+    data,
+    schema=["Tool", "Time", "InstallType"],
+    orient="row"  # Fixes data orientation warning
+).with_columns(
+    pl.col("InstallType").cast(pl.Categorical)
+)
 
-Let me know if you want me to dial up/down the informality anywhere! The goal was to keep technical accuracy while making it feel more like a colleague explaining things over coffee. ☕
+# Create the horizontal bar chart
+plot = (
+    ggplot(df, aes(x="InstallType", y="Time", fill="Tool"))
+    + geom_col(
+        position=position_dodge(width=0.7),
+        width=0.6,
+        color="white",
+        size=0.5,
+        alpha=0.9
+    )
+    + coord_flip()
+    + labs(
+        title="Package Manager Performance Comparison",
+        x="Install Type",
+        y="Time (seconds)",
+        fill="Package Manager"
+    )
+    + scale_fill_manual(values={"pip": "#FF6F42", "uv": "#42A5F5"})
+    # Set the order of InstallType - now with Warm Install first
+    + scale_x_discrete(
+        limits=["Warm Install", "Cold Install"],
+        labels=["Warm Install", "Cold Install"]
+    )
+    + theme_dark()
+    + theme(
+        text=element_text(color="white"),
+        panel_background=element_rect(fill="#1a1a1a"),
+        plot_background=element_rect(fill="#1a1a1a"),
+        legend_background=element_rect(fill="#1a1a1a"),
+        legend_position="top",
+        axis_title_y=element_text(margin={"r": 15}),
+        axis_title_x=element_text(margin={"t": 10}),
+        panel_grid_major_x=element_line(color="#333333"),
+        panel_grid_minor_x=element_blank(),
+        plot_title=element_text(size=14, ha="center", margin={"b": 15}),
+    )
+    # Annotate UV warm install with visible line
+    + geom_segment(
+        df.filter(
+            (pl.col("Tool") == "uv") & (pl.col("InstallType") == "Warm Install")
+        ).to_pandas(),
+        aes(x=1.38, xend=1.38, y=0, yend=0.029),
+        color="#42A5F5",
+        size=1.5,
+        inherit_aes=False
+    )
+)
+
+# For Jupyter notebook display
+plot.save("benchmark.png", dpi=300)
+
+{{% /comment %}}
