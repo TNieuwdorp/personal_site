@@ -47,7 +47,8 @@ This makes one `uv sync` the only command you run to get up and running.
 Remember that time `numpy` broke because someone used Python 3.12 too early? `uv`'s Python management is smoother than a barista's latte art:
 
 ```bash
-uv python install 3.13  # Gets the exact version you need
+uv python install 3.13.1  # Gets the exact version you need
+# or
 uv venv --python 3.13   # Creates environment with it
 ```
 
@@ -111,7 +112,7 @@ Auto-installs deps into an ephemeral environment and then runs it - chef's kiss
 
 ## But Does It Work with [Insert Your Favorite Tool Here]?
 Probably! uv plays nice with:
-- ✅ GitHub Actions ([example](#cicd-integration))
+- ✅ [GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/)
 - ✅ Docker (their docs have great examples)
 - ✅ Jupyter notebooks (use `uv run notebook.ipynb`)
 - ✅ Even legacy `requirements.txt` files
