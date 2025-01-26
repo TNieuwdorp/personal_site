@@ -113,8 +113,8 @@ Auto-installs deps into an ephemeral environment and then runs it - chef's kiss
 ## But Does It Work with [Insert Your Favorite Tool Here]?
 Probably! uv plays nice with:
 - ✅ [GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/)
-- ✅ Docker (their docs have great examples)
-- ✅ Jupyter notebooks (use `uv run notebook.ipynb`)
+- ✅ Docker
+- ✅ Jupyter notebooks (use `uv run --with jupyterlab jupyter lab`)
 - ✅ Even legacy `requirements.txt` files
 - ⛔️ A [tool.poetry] set-up in pyproject.toml (But it's relatively easy to migrate)
 
