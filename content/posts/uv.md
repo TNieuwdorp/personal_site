@@ -150,9 +150,11 @@ from plotnine import position_dodge
 # Create the dataframe with explicit orientation
 data = [
     ("pip", 154.276, "Cold Install"),
+    ("poetry", 53.169,"Cold Install"),
     ("uv", 5.908, "Cold Install"),
     ("pip", 102.244, "Warm Install"),
-    ("uv", 0.029, "Warm Install")
+    ("poetry", 20.641, "Warm Install"),
+    ("uv", 0.029, "Warm Install"),
 ]
 df = pl.DataFrame(
     data,
@@ -179,7 +181,7 @@ plot = (
         y="Time (seconds)",
         fill="Package Manager"
     )
-    + scale_fill_manual(values={"pip": "#FF6F42", "uv": "#42A5F5"})
+    + scale_fill_manual(values={"pip": "#FF6F42", "uv": "#42A5F5", "poetry": "#FF0000"})
     # Set the order of InstallType - now with Warm Install first
     + scale_x_discrete(
         limits=["Warm Install", "Cold Install"],
