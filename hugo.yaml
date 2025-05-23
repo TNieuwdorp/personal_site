@@ -35,9 +35,9 @@ menu:
       name: Posts
       url: /posts/
       weight: 20
-    - identifier: categories
-      name: Categories
-      url: /categories/
+    - identifier: talks
+      name: Talks
+      url: /talks/
       weight: 30    
     - identifier: about
       name: About
