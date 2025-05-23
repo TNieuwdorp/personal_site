@@ -4,6 +4,9 @@ title: "Why I'm Ditching poetry for uv"
 description: "How I cut my Python working environment's headaches in half with Astral's uv - a Rust-powered Swiss Army knife for Python workflows."
 keywords: ["Python", "uv", "Data Science", "Machine Learning", "Rust"]
 categories: [tool]
+images:
+  - "/images/uv-meme.jpg"
+  - "/images/benchmark.png"
 ---
 
 ## Where Have You Been All My Life?
@@ -140,9 +143,7 @@ My main takeaway from this tool is that **performance is, in fact, a feature**!
 Ultimately that leaves me more time to browse memes, which is, of course, what life is actually about.
 
 ![Drake meme showing the commands uv replaces.](/images/uv-meme.jpg "uv meme")
-
-
-{{% comment %}}
+<!--
 import polars as pl
 from plotnine import *
 from plotnine import position_dodge
@@ -215,4 +216,4 @@ plot = (
 # For Jupyter notebook display
 plot.save("benchmark.png", dpi=300)
 
-{{% /comment %}}
+-->
