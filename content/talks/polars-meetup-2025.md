@@ -1,16 +1,25 @@
 ---
-title: "The First Ever Polars Meet-up"
-date: 2025-05-23
+title: "Community Talk for Polars Meet-up #1"
+date: 2025-04-03
 summary: "What we learned by converting a large codebase from Pandas to Polars."
 draft: false
 ---
 
-{{< youtube 7DV6gCBk-fg >}}
+{{< youtube B2Ljp2Fb-l0 >}}
 
+The talk presents the experience of converting a large codebase from Pandas to Polars, highlighting significant performance improvements, maintainability, and practical lessons learned throughout the process. Jeroen and I discuss the challenges faced, the benefits of using Polars, and the methodologies applied during the migration.
+
+## Key Points
+
+- **Codebase Transition:** Converted a 20,000-line codebase from Pandas to Polars, resulting in a 98% cost reduction and improved maintainability.
+- **Performance Gains:** Processing time reduced from 5 hours (Pandas) to 1 second (Polars) for large datasets.
+- **Use of Lazy API:** Leveraged Polars' Lazy API for deferred computation, reducing memory usage and execution time.
+- **Benchmarking Importance:** Regular benchmarking identified performance improvements and validated optimizations.
+- **Community Support:** Engaged with the Polars community for insights and problem-solving during the transition.
+- **Iterative Improvement Approach:** Incremental migration, starting with low-hanging fruit, allowed gradual integration of Polars.
+- **Final Results:** Achieved 20% overall processing time reduction, handled 50 sample datasets with 40 GB RAM.
+- **Book Announcement:** Announced 'The Definitive Guide to Polars' to share project insights and help others transition.
 
 This talk repeats the PyData NYC talk I gave together with Jeroen.
 
 See also my related talk: [PyData NYC 2024](/talks/pydata-nyc-2024/)
-
-
-

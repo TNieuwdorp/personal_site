@@ -24,6 +24,7 @@ params:
   ShowReadingTime: true
   ShowShareButtons: true
   ShowBreadCrumbs: true
+  mainSections: ["posts", "talks"]
 
 menu:
   main:

@@ -4,9 +4,9 @@ title: 'Python Polars: the Definitive Guide!'
 description: "Announcing the upcoming O'Reilly book 'Python Polars: the Definitive Guide', co-authored with Jeroen Janssens. Learn about this comprehensive guide to the fast and efficient Polars DataFrame library."
 categories: [polars, book]
 tags: [python, polars, data-engineering, oreilly, dataframe, book]
-# For social sharing
+images:
+  - "/posts/python-polars/pp-cover-800w.jpg"
 socialShare: true
-# Show estimated reading time
 showReadingTime: true
 ---
 
@@ -16,3 +16,4 @@ You can follow the progress of the book on https://polarsguide.com.
 
 The LinkedIn announcement can be found [here](https://www.linkedin.com/posts/thijsnieuwdorp_we-are-writing-python-polars-the-definitive-activity-7071840225534070785-ttt8/).
 
+![Book cover for Python Polars: the Definitive Guide](/posts/python-polars/pp-cover-800w.jpg "Book cover: Python Polars: the Definitive Guide")
