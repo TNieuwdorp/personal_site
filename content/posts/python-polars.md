@@ -4,8 +4,6 @@ title: 'We are writing Python Polars: the Definitive Guide'
 description: "Together with Jeroen Janssens, I am working on an O'Reilly book about Polars."
 categories: [polars, book]
 tags: [python, polars, data-engineering, oreilly, dataframe, book]
-socialShare: true
-showReadingTime: true
 ---
 
 Together with [Jeroen Janssens](https://jeroenjanssens.com/), I am working on [Python Polars: the Definitive Guide](https://polarsguide.com), an O'Reilly book for Python practitioners who want to learn Polars.

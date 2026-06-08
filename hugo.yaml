@@ -1,10 +1,10 @@
 baseURL: https://thijsnieuwdorp.com/
-languageCode: en-us
+locale: en-US
 title: Thijs Nieuwdorp
 theme: "PaperMod"
 
 params:
-  description: "Expert insights on Python development, data engineering with Polars, package management with uv, and productivity tips. Join Thijs Nieuwdorp's technical blog for practical guides and best practices."
+  description: "Thijs Nieuwdorp writes about Polars, Python data engineering, and modern data tooling."
   author: "Thijs Nieuwdorp"
   homeInfoParams:
     Title: "Hi, I'm Thijs"

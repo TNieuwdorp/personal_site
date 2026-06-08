@@ -1,7 +1,7 @@
 <div class="profile-hero">
-  <img src="{{ .Get 0 }}" alt="{{ .Get 1 }}" class="profile-photo">
+  <img src="{{ .Get 0 }}" alt="{{ .Get 1 }}" class="profile-photo" loading="lazy">
   <div class="profile-hero-text">
-    <h1 class="profile-name">{{ .Get 1 }}</h1>
+    <p class="profile-name">{{ .Get 1 }}</p>
     <p class="profile-role">{{ .Get 2 }}</p>
   </div>
 </div>

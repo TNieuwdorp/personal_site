@@ -6,8 +6,6 @@ categories: [polars, book]
 tags: [python, polars, data-engineering, oreilly, dataframe, book]
 images:
   - "/images/pp-cover-800w.jpg"
-socialShare: true
-showReadingTime: true
 ---
 
 [![Book cover for Python Polars: the Definitive Guide](/images/pp-cover-800w.jpg "Python Polars: the Definitive Guide")](https://polarsguide.com)
