@@ -1,0 +1,26 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
+
+<div class="book-card">
+    <a href="https://polarsguide.com">
+        <img src="/images/pp-cover-800w.jpg" alt="Python Polars: the Definitive Guide cover" loading="lazy">
+    </a>
+    <div class="book-card-content">
+        <h3><a href="https://polarsguide.com">Python Polars: the Definitive Guide</a></h3>
+        <p>The comprehensive guide to Polars for Python data practitioners. Co-authored with Jeroen Janssens, published by O'Reilly in 2025.</p>
+        <a href="https://polarsguide.com">First chapter free</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.oreilly.com/library/view/python-polars-the/9781098156077/">Buy on O'Reilly</a>
+    </div>
+</div>

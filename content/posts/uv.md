@@ -9,6 +9,8 @@ images:
   - "/images/benchmark.png"
 ---
 
+> This post was written as an experiment with ChatGPT. The benchmarks and opinions are my own; the writing style is largely AI-generated.
+
 ## Where Have You Been All My Life?
 
 Let me paint you a familiar picture: You're excited to start a new Python project.

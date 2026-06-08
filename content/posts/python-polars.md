@@ -1,19 +1,15 @@
 ---
 date: '2023-06-06T13:28:18+00:00'
-title: 'Python Polars: the Definitive Guide!'
-description: "Announcing the upcoming O'Reilly book 'Python Polars: the Definitive Guide', co-authored with Jeroen Janssens. Learn about this comprehensive guide to the fast and efficient Polars DataFrame library."
+title: 'We are writing Python Polars: the Definitive Guide'
+description: "Together with Jeroen Janssens, I am working on an O'Reilly book about Polars."
 categories: [polars, book]
 tags: [python, polars, data-engineering, oreilly, dataframe, book]
-images:
-  - "/posts/python-polars/pp-cover-800w.jpg"
 socialShare: true
 showReadingTime: true
 ---
 
-Together with [Jeroen Janssens](https://jeroenjanssens.com/), I'm working on [Python Polars: the Definitive Guide](https://www.oreilly.com/library/view/python-polars-the/9781098156077/).
+Together with [Jeroen Janssens](https://jeroenjanssens.com/), I am working on [Python Polars: the Definitive Guide](https://polarsguide.com), an O'Reilly book for Python practitioners who want to learn Polars.
 
-You can follow the progress of the book on https://polarsguide.com.
+You can follow the progress on [polarsguide.com](https://polarsguide.com).
 
-The LinkedIn announcement can be found [here](https://www.linkedin.com/posts/thijsnieuwdorp_we-are-writing-python-polars-the-definitive-activity-7071840225534070785-ttt8/).
-
-![Book cover for Python Polars: the Definitive Guide](/posts/python-polars/pp-cover-800w.jpg "Book cover: Python Polars: the Definitive Guide")
+The LinkedIn announcement is [here](https://www.linkedin.com/posts/thijsnieuwdorp_we-are-writing-python-polars-the-definitive-activity-7071840225534070785-ttt8/).
